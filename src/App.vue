@@ -1,22 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Header title="Extrato" />
+  <Extract />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Extract from '@/views/Extract/Extract.vue';
+import Header from '@/common/components/Header/Header.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Extract,
+    Header
+},
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
