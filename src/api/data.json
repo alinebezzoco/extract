@@ -1,0 +1,177 @@
+{
+  "itemsTotal": 22,
+  "results": [
+    {
+      "amountTotal": 128000,
+      "date": "2021-01-06",
+      "items": [
+        {
+          "actor": "José Marques",
+          "amount": 13920,
+          "dateEvent": "2021-01-06T21:00:00Z",
+          "entry": "CREDIT",
+          "scheduled": false,
+          "source": "PAYMENT",
+          "status": "COMPLETED",
+          "type": "BANKSLIP"
+        }
+      ]
+    },
+    {
+      "amountTotal": 114080,
+      "date": "2021-01-15",
+      "items": [
+        {
+          "actor": "Alexandre da Silva",
+          "amount": 20000,
+          "dateEvent": "2021-01-15T00:00:00Z",
+          "entry": "DEBIT",
+          "scheduled": false,
+          "source": "TRANSFER",
+          "status": "COMPLETED",
+          "type": "EXTERNAL"
+        }
+      ]
+    },
+    {
+      "amountTotal": 94080,
+      "date": "2021-01-17",
+      "items": [
+        {
+          "actor": "Lelo Desenv Ltda",
+          "amount": 56000,
+          "dateEvent": "2021-01-17T00:00:00Z",
+          "entry": "DEBIT",
+          "scheduled": false,
+          "source": "TRANSFER",
+          "status": "COMPLETED",
+          "type": "INTERNAL"
+        },
+        {
+          "actor": "Lola Camisaria",
+          "amount": 12000,
+          "dateEvent": "2020-01-17T00:00:00Z",
+          "entry": "DEBIT",
+          "scheduled": false,
+          "source": "TRANSFER",
+          "status": "COMPLETED",
+          "type": "INTERNAL"
+        },
+        {
+          "actor": "Lelo Desenv Ltda",
+          "amount": 56000,
+          "dateEvent": "2020-01-17T00:00:00Z",
+          "entry": "CREDIT",
+          "scheduled": false,
+          "source": "TRANSFER",
+          "status": "REFUNDED",
+          "type": "INTERNAL"
+        },
+        {
+          "actor": "Tereza da Silva",
+          "amount": 1000,
+          "dateEvent": "2020-01-17T21:00:00Z",
+          "entry": "CREDIT",
+          "scheduled": false,
+          "source": "PAYMENT",
+          "status": "COMPLETED",
+          "type": "BANKSLIP"
+        }
+      ]
+    },
+    {
+      "amountTotal": 83080,
+      "date": "2020-04-20",
+      "items": [
+        {
+          "actor": "Giovanna Bezerra",
+          "amount": 1000,
+          "dateEvent": "2020-04-20T00:00:00Z",
+          "entry": "DEBIT",
+          "scheduled": false,
+          "source": "TRANSFER",
+          "status": "COMPLETED",
+          "type": "EXTERNAL"
+        },
+        {
+          "actor": "Felipe Garcia",
+          "amount": 50000,
+          "dateEvent": "2020-04-20T21:00:00Z",
+          "entry": "CREDIT",
+          "scheduled": false,
+          "source": "PAYMENT",
+          "status": "COMPLETED",
+          "type": "BANKSLIP"
+        }
+      ]
+    },
+    {
+      "amountTotal": 132080,
+      "date": "2020-04-24",
+      "items": [
+        {
+          "actor": "Lola Camisaria",
+          "amount": 13580,
+          "dateEvent": "2020-04-24T00:00:00Z",
+          "entry": "DEBIT",
+          "scheduled": false,
+          "source": "TRANSFER",
+          "status": "COMPLETED",
+          "type": "INTERNAL"
+        },
+        {
+          "actor": "Felipe",
+          "amount": 2500,
+          "dateEvent": "2020-04-24T00:00:00Z",
+          "entry": "CREDIT",
+          "scheduled": false,
+          "source": "TRANSFER",
+          "status": "REFUNDED",
+          "type": "EXTERNAL"
+        }
+      ]
+    },
+    {
+      "amountTotal": 121000,
+      "date": "2020-05-28",
+      "items": [
+        {
+          "actor": "Lola Camisaria",
+          "amount": 33850,
+          "dateEvent": "2020-01-28T00:00:00Z",
+          "entry": "DEBIT",
+          "scheduled": true,
+          "source": "TRANSFER",
+          "status": "PENDING",
+          "type": "INTERNAL"
+        },
+        {
+          "actor": "Lelo Desenv Ltda",
+          "amount": 50000,
+          "dateEvent": "2020-01-28T00:00:00Z",
+          "entry": "DEBIT",
+          "scheduled": true,
+          "source": "TRANSFER",
+          "status": "PENDING",
+          "type": "INTERNAL"
+        }
+      ]
+    },
+    {
+      "amountTotal": 37150,
+      "date": "2020-06-30",
+      "items": [
+        {
+          "actor": "Lelo Desenv Ltda",
+          "amount": 28050,
+          "dateEvent": "2020-01-30T00:00:00Z",
+          "entry": "DEBIT",
+          "scheduled": true,
+          "source": "TRANSFER",
+          "status": "PENDING",
+          "type": "INTERNAL"
+        }
+      ]
+    }
+  ]
+}
