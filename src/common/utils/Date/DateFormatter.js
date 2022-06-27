@@ -1,8 +1,10 @@
-import { format as _format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
+import { format as _format } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 const DateFormatter = {
-  formatDateDMH(date) {
+  formatDateDMH(date = null) {
+    if (!date) return null;
+
     const currentDate = new Date(date);
     const day = _format(currentDate, "dd");
     const month = _format(currentDate, "MMM", {
@@ -14,13 +16,18 @@ const DateFormatter = {
     return `${day} ${month} - ${hour}`;
   },
 
-  formatDateDMY(date) {  
+  formatDateDMY(date = null) {
+    if (!date) return null;
+
     const currentDate = new Date(date);
-    const day = _format(currentDate, 'dd');
-    const month = _format(currentDate, 'MMMM', { awareOfUnicodeTokens: true, locale: ptBR });
-    const year = _format(currentDate, 'yyyy');
-  
+    const day = _format(currentDate, "dd");
+    const month = _format(currentDate, "MMMM", {
+      awareOfUnicodeTokens: true,
+      locale: ptBR,
+    });
+    const year = _format(currentDate, "yyyy");
+
     return `${day} de ${month} de ${year}`;
-  }
+  },
 };
 export default DateFormatter;
