@@ -74,7 +74,7 @@ export default {
         p {
             text-align: left;
             padding: 0 20px;
-            width: 180px;
+            width: 230px;
             font-size: 16px;
 
             &:first-of-type {

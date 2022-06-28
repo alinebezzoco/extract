@@ -30,7 +30,7 @@ export default {
         text-align: left;
         padding: 0 20px;
 
-        width: 180px;
+        width: 230px;
 
         color: var(--gray-400);
 
