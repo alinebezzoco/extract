@@ -25,7 +25,7 @@ An SPA application to display a bank extract account. Made with Vue 3 with `vue-
 │   ├── assets
 │   │   ├── icons
 │   │   ├── images
-│   ├── common
+│   ├── shared
 │   │   ├── components
 │   |   |   |── ComponentName
 │   |   |   |   |── __tests__
@@ -40,7 +40,7 @@ An SPA application to display a bank extract account. Made with Vue 3 with `vue-
 
 - api: mock REST api
 - assets: image and icon project
-- common: a folder that stores components, constants and utils
+- shared: a folder that stores components, constants and utils
     - components: a folder that stores elements, for example: search filter, table, radio button
     - constants: a folder that stores key/value objects
     - utils: a folder that stores util and global functions

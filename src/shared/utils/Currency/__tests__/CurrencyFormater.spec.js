@@ -1,4 +1,4 @@
-import CurrencyFormatter from "@/common/utils/Currency/CurrencyFormatter.js";
+import CurrencyFormatter from "@/shared/utils/Currency/CurrencyFormatter.js";
 
 describe("CurrencyFormatter.js", () => {
   it("should currency format with success", () => {

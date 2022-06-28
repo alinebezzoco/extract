@@ -6,8 +6,8 @@
     "moduleResolution": "node",
     "paths": {
       "@/*": ["src/*"],
-      "@/components/*": ["src/common/components/*"],
-      "@/constants/*": ["src/common/constants/*"]
+      "@/components/*": ["src/shared/components/*"],
+      "@/constants/*": ["src/shared/constants/*"]
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
   }

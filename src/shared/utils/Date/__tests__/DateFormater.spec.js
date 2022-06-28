@@ -1,5 +1,5 @@
 
-import DateFormatter from "@/common/utils/Date/DateFormatter.js";
+import DateFormatter from "@/shared/utils/Date/DateFormatter.js";
 
 describe('DateFormatter.js', () => {
   const date = '2022-06-27T20:34:00Z';

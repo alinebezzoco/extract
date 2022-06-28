@@ -25,10 +25,10 @@
 </template>
 
 <script>
-import { ENTRY_TYPE, SOURCE_TYPE, TRANSACTION_TYPE, STATUS_TYPE } from '@/common/constants/TransactionType.js';
-import { FILTER_TYPE } from '@/common/constants/FilterType.js';
-import Table from '@/common/components/Table/Table.vue';
-import TableBody from '@/common/components/Table/TableBody.vue';
+import { ENTRY_TYPE, SOURCE_TYPE, TRANSACTION_TYPE, STATUS_TYPE } from '@/shared/constants/TransactionType.js';
+import { FILTER_TYPE } from '@/shared/constants/FilterType.js';
+import Table from '@/shared/components/Table/Table.vue';
+import TableBody from '@/shared/components/Table/TableBody.vue';
 
 export default {
   name: "ExtractPage",
@@ -113,8 +113,8 @@ export default {
 } 
 </script>
 <style lang="scss" scoped>
-@import '@/common/components/RadioButton/RadioButton.scss';
-@import '@/common/components/Search/Search.scss';
+@import '@/shared/components/RadioButton/RadioButton.scss';
+@import '@/shared/components/Search/Search.scss';
 
 .content {
   display: flex;

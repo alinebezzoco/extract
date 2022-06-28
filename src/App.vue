@@ -5,7 +5,7 @@
 
 <script>
 import Extract from '@/views/Extract/Extract.vue';
-import Header from '@/common/components/Header/Header.vue';
+import Header from '@/shared/components/Header/Header.vue';
 
 export default {
   name: 'App',
