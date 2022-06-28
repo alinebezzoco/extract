@@ -1,5 +1,9 @@
 <template>
-    <h1>{{title}}</h1>
+    <header>
+        <div class="title">
+            <h2>{{ title }}</h2>
+        </div>
+    </header>
 </template>
 
 <script>
@@ -11,5 +15,24 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+header { 
+    border-bottom: 1px solid var(--gray-200);
+    margin-bottom: 56px;
+}
+.title { 
+    width: 50%;
+    padding-left: 50px;
+    @media(max-width: 780px) { 
+        width: 100%;
+        padding-left: 0;
+    }
+}
+h2 {
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 32px;
+    color: var(--gray-500);
+
+}
 </style>
