@@ -11,9 +11,10 @@ const DateFormatter = {
       awareOfUnicodeTokens: true,
       locale: ptBR,
     });
+    const year = _format(currentDate, "yyyy");
     const hour = _format(currentDate, "HH:mm");
 
-    return `${day} ${month} - ${hour}`;
+    return `${day} ${month} ${year} - ${hour}`;
   },
 
   formatDateDMY(date = null) {
@@ -25,9 +26,7 @@ const DateFormatter = {
       awareOfUnicodeTokens: true,
       locale: ptBR,
     });
-    const year = _format(currentDate, "yyyy");
-
-    return `${day} de ${month} de ${year}`;
+    return `${day} de ${month}`;
   },
 };
 export default DateFormatter;
