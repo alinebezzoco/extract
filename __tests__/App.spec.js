@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/vue";
+import { render } from "@testing-library/vue";
 import App from "../../src/App.vue";
 
 describe("App.vue", () => {

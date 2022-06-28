@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
-import Header from "../../src/common/components/Header/Header.vue";
+import Header from "@/common/components/Header/Header.vue";
 
 describe("Header.vue", () => {
   it("renders title props when passed", () => {
