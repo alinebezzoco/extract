@@ -1,11 +1,19 @@
 <template>
-  <div class="content">
-    <label v-for="(filter, key) in filterByList" :for="key" :key="key"> 
-      <input type="radio" name="sortBy" :id="key" v-model="filterBySelected" :value="key" />
-      {{ filter }}
-    </label>
+  <section class="content">
+    <div class="filter">
+      <div class="radio-group">
+        <span v-for="(filter, key) in filterByList" :for="key" :key="key">
+          <input type="radio" name="sortBy" :id="key" v-model="filterBySelected" :value="key" />
+          <label>
+            {{ filter }}
+          </label>
+        </span>
+      </div>
 
-    <input type="text" v-model="search" placeholder="Pesquisar" id="search-input" />
+      <div class="search">
+        <input type="text" v-model="search" placeholder="Pesquisar" id="search-input" />
+      </div>
+    </div>
 
     <Table :fields="fieldsList">
       <TableBody v-if="!search && filterBySelected == 'ALL'" :items="items">
@@ -13,7 +21,7 @@
       <TableBody v-else :filteredItems="filteredItems">
       </TableBody>
     </Table>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -102,35 +110,31 @@ export default {
       });
     },
   },
-}
+} 
 </script>
-<style lang="css">
+<style lang="scss" scoped>
+@import '@/common/components/RadioButton/RadioButton.scss';
+@import '@/common/components/Search/Search.scss';
+
 .content {
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
   margin: 0 auto;
-  display: block;
-}
 
-table {
-  width: 100%;
-  text-align: left;
-  margin: 20px 0;
-}
+  @media (max-width: 780px) {
+    width: 100%;
+  }
 
-table thead:first-of-type {
-  position: relative;
-  top: 20px;
-}
-
-#sort-bar {
-  background-color: #f2e0c1;
-  padding: 10px;
-}
-
-.sort-button {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  height: 100%;
-  width: 50px;
+  .filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: center;
+    @media (max-width: 780px) { 
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
 }
 </style>
