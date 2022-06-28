@@ -40,8 +40,6 @@ export default {
 };
 </script>
 
-<style scoped>
-label {
-    cursor: pointer;
-}
+<style lang="scss" scoped>
+@import './RadioButton.scss';
 </style>
