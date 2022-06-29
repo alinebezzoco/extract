@@ -1,13 +1,12 @@
 .search { 
+    width: 100%;
     input { 
         height: 64px;
         background: var(--gray-100);
         border-radius: 16px;
         text-align: left;
         font-size: 16px;
-        width: 500px;
-        margin: 0 auto;
-        display: block;
+        width: 85%;
         padding: 0 50px;
         border: none;
         background-image: url("@/assets/icons/search.svg");
@@ -15,7 +14,7 @@
         background-repeat: no-repeat;
         background-position: 16px 20px;
         @media(max-width: 780px) { 
-            width: 250px;
+            width: 70%;
         }
         &:placeholder { 
             padding-left: 20px;
