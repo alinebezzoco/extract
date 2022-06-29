@@ -1,6 +1,9 @@
 <template>
-    <input type="radio" :id="id" :name="name" :value="value" v-bind="$attrs" @change="selectedItem" :disabled="disabled" />
-    <label :for="id">{{ label }} </label>
+    <span>
+        <input type="radio" :id="id" :name="name" :value="value" v-bind="$attrs" @change="selectedItem"
+            :disabled="disabled" />
+        <label :for="id">{{ label }} </label>
+    </span>
 </template>
 
 <script>
