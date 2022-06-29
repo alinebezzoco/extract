@@ -1,15 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;800&display=swap");
-
-:root {
-  --primary-color: #fe3e6d;
-  --secondary-color: #1a93da;
-  --gray-200: #dee4e9;
-  --gray-300: #c7cbcf;
-  --gray-400: #6b7076;
-  --gray-500: #3b3b3b;
-  --light-blue: #eaf7ff;
-  --white: #fff;
-}
+@import '@/shared/tokens/Colors.scss';
 
 *,
 body {
@@ -17,5 +7,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: var(--gray-500);
 }

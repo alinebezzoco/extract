@@ -1,6 +1,6 @@
 <template>
   <Header title="Extrato" />
-    <Extract />
+  <Extract />
 </template>
 
 <script>
@@ -17,5 +17,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import './index.css';
+@import './index.scss';
 </style>
