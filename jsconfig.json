@@ -9,9 +9,8 @@
       "@/components/*": ["src/shared/components/*"],
       "@/constants/*": ["src/shared/constants/*"],
       "@/views/*": ["src/views/*"],
-      "@/assets/*": ["src/assets/*"]
-
-
+      "@/assets/*": ["src/assets/*"],
+      "@/api/*": ["src/api/*"]
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
   }
