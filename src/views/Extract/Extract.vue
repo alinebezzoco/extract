@@ -21,6 +21,9 @@
       <TableBody v-else :filteredItems="filteredItems">
       </TableBody>
     </Table>
+    <div v-if="search && !filteredItems.length">
+      <p>Nenhum resultado encontrado</p>
+    </div>
   </section>
 </template>
 
@@ -50,7 +53,7 @@ export default {
   computed: {
     filteredItems() {
       // Search by name or transfer type     
-      if (this.search != "" && this.search) {
+      if (this.search) {
         return this.details.filter((item) => {
           return (item.actor
             .toLowerCase()
@@ -60,6 +63,7 @@ export default {
               .includes(this.search.toLowerCase()));
         });
       }
+
       // Filter by entry
       return this.filterBySelected == 'CREDIT' ?
         this.details.filter((item) => item.entry.includes(ENTRY_TYPE.CREDIT)) :
@@ -99,20 +103,20 @@ export default {
         const SOURCE_TRANSFER = result.source == SOURCE_TYPE.TRANSFER;
 
         // TIP: pass this transaction type in backend, for example: "transactionType: 'payment debit'"....
-        if (STATUS_COMPLETED && ENTRY_DEBIT && SOURCE_PAYMENT) result.status = TRANSACTION_TYPE.PAYMENT_DEBIT;
-        if (STATUS_COMPLETED && ENTRY_DEBIT && SOURCE_TRANSFER) result.status = TRANSACTION_TYPE.TRANSFER_DEBIT;
-        if (STATUS_COMPLETED && ENTRY_CREDIT && SOURCE_PAYMENT) result.status = TRANSACTION_TYPE.PAYMENT_CREDIT;
-        if (STATUS_COMPLETED && ENTRY_CREDIT && SOURCE_TRANSFER) result.status = TRANSACTION_TYPE.TRANSFER_CREDIT;
-        if (STATUS_REFUNDED && ENTRY_CREDIT && SOURCE_PAYMENT) result.status = TRANSACTION_TYPE.PAYMENT_REFUNDED;
-        if (STATUS_REFUNDED && ENTRY_CREDIT && SOURCE_TRANSFER) result.status = TRANSACTION_TYPE.TRANSFER_REFUNDED;
-        if (STATUS_PENDING && ENTRY_DEBIT && SOURCE_PAYMENT) result.status = TRANSACTION_TYPE.PAYMENT_PENDING;
-        if (STATUS_PENDING && ENTRY_DEBIT && SOURCE_TRANSFER) result.status = TRANSACTION_TYPE.TRANSFER_PENDING;
+        if (STATUS_COMPLETED && ENTRY_DEBIT && SOURCE_PAYMENT) result.status = TRANSACTION_TYPE.PAYMENT_DEBIT, result.type = 'scheduled';
+        if (STATUS_COMPLETED && ENTRY_DEBIT && SOURCE_TRANSFER) result.status = TRANSACTION_TYPE.TRANSFER_DEBIT, result.type = 'scheduled';
+        if (STATUS_COMPLETED && ENTRY_CREDIT && SOURCE_PAYMENT) result.status = TRANSACTION_TYPE.PAYMENT_CREDIT, result.type = 'credit';
+        if (STATUS_COMPLETED && ENTRY_CREDIT && SOURCE_TRANSFER) result.status = TRANSACTION_TYPE.TRANSFER_CREDIT, result.type = 'credit';
+        if (STATUS_REFUNDED && ENTRY_CREDIT && SOURCE_PAYMENT) result.status = TRANSACTION_TYPE.PAYMENT_REFUNDED, result.type = 'refunded';
+        if (STATUS_REFUNDED && ENTRY_CREDIT && SOURCE_TRANSFER) result.status = TRANSACTION_TYPE.TRANSFER_REFUNDED, result.type = 'refunded';
+        if (STATUS_PENDING && ENTRY_DEBIT && SOURCE_PAYMENT) result.status = TRANSACTION_TYPE.PAYMENT_PENDING, result.type = 'scheduled';
+        if (STATUS_PENDING && ENTRY_DEBIT && SOURCE_TRANSFER) result.status = TRANSACTION_TYPE.TRANSFER_PENDING, result.type = 'scheduled';
       });
     },
   },
 } 
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import '@/shared/components/RadioButton/RadioButton.scss';
 @import '@/shared/components/Search/Search.scss';
 
@@ -131,10 +135,31 @@ export default {
     justify-content: space-between;
     margin-bottom: 40px;
     align-items: center;
-    @media (max-width: 780px) { 
+
+    @media (max-width: 780px) {
       justify-content: center;
       flex-direction: column;
     }
+  }
+
+  .credit {
+    color: var(--secondary-color);
+
+    &:before {
+      content: '+ ';
+    }
+  }
+
+  .scheduled {
+    color: var(--primary-color);
+
+    &:before {
+      content: '- ';
+    }
+  }
+
+  .refunded {
+    text-decoration: line-through;
   }
 }
 </style>

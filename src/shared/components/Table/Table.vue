@@ -23,15 +23,11 @@ export default {
 
     p {
         display: inline-block;
-
         font-weight: 400;
         font-size: 14px;
-
         text-align: left;
-        padding: 0 20px;
-
-        width: 230px;
-
+        padding: 0 60px;
+        width: 150px;
         color: var(--gray-400);
 
         &:nth-of-type(3) {

@@ -1,32 +1,30 @@
 <template>
     <div class="table-body">
-        <div class="table-row">
-            <slot v-for="(result, index) in items" :key="index">
-                <div class="table-header">
-                    <p>{{ $dateFormat.formatDateDMY(result.date) }}</p>
-                </div>
-                <div class="table-content">
-                    <div v-for="(item, i) in result.items" :key="i" class="table-results">
-                        <p>{{ item.actor }}</p>
-                        <p>{{ item.status }}</p>
-                        <p>{{ $dateFormat.formatDateDMH(item.dateEvent) }}</p>
-                        <p>{{ $currencyFormat.convertToBRL(item.amount) }}</p>
-                    </div>
-                </div>
-                <div class="table-footer">
-                    <p>saldo do dia: <strong>{{ $currencyFormat.convertToBRL(result.amountTotal) }}</strong></p>
-                </div>
-            </slot>
-        </div>
-
-        <div class="table-row">
+        <slot v-for="(result, index) in items" :key="index">
+            <div class="table-header">
+                <p>{{ $dateFormat.formatDateDM(result.date) }}</p>
+            </div>
             <div class="table-content">
-                <div v-for="(item, index) in filteredItems" :key="index" class="table-results">
+                <div v-for="(item, i) in result.items" :key="i" class="table-results">
+                    <img :src="require(`@/assets/icons/${item.type}.svg`)" :alt="item.status" :title="item.status">
                     <p>{{ item.actor }}</p>
                     <p>{{ item.status }}</p>
-                    <p>{{ $dateFormat.formatDateDMH(item.dateEvent) }}</p>
-                    <p>{{ $currencyFormat.convertToBRL(item.amount) }}</p>
+                    <p>{{ $dateFormat.formatDateDMYH(item.dateEvent) }}</p>
+                    <p :class="item.type">{{ $currencyFormat.convertToBRL(item.amount) }}</p>
                 </div>
+            </div>
+            <div class="table-footer">
+                <p>saldo do dia: <strong>{{ $currencyFormat.convertToBRL(result.amountTotal) }}</strong></p>
+            </div>
+        </slot>
+
+        <div class="table-content">
+            <div v-for="(item, index) in filteredItems" :key="index" class="table-results">
+                <img :src="require(`@/assets/icons/${item.type}.svg`)" :alt="item.status" :title="item.status">
+                <p>{{ item.actor }}</p>
+                <p>{{ item.status }}</p>
+                <p>{{ $dateFormat.formatDateDMYH(item.dateEvent) }}</p>
+                <p :class="item.type">{{ $currencyFormat.convertToBRL(item.amount) }}</p>
             </div>
         </div>
     </div>
@@ -71,6 +69,12 @@ export default {
         display: flex;
         justify-content: flex-start;
 
+        padding: 16px 0 16px 16px;
+
+        @media (max-width: 780px) {
+            padding: 0 0 0 8px;
+        }
+
         p {
             text-align: left;
             padding: 0 20px;
@@ -92,9 +96,17 @@ export default {
 
             @media (max-width: 780px) {
                 font-size: 12px;
-                padding: 10px;
+                padding: 8px;
             }
 
+        }
+
+        img {
+            @media (max-width: 780px) {
+                margin: 20px auto;
+                width: 24px;
+                height: 24px;
+            }
         }
     }
 }
