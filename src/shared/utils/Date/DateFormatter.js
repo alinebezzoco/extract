@@ -2,7 +2,7 @@ import { format as _format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
 const DateFormatter = {
-  formatDateDMH(date = null) {
+  formatDateDMYH(date = null) {
     if (!date) return null;
 
     const currentDate = new Date(date);
@@ -17,7 +17,7 @@ const DateFormatter = {
     return `${day} ${month} ${year} - ${hour}`;
   },
 
-  formatDateDMY(date = null) {
+  formatDateDM(date = null) {
     if (!date) return null;
 
     const currentDate = new Date(date);
