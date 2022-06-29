@@ -37,5 +37,9 @@ h2 {
     text-align: left;
     color: var(--gray-500);
 
+    @media(max-width: 780px) {
+        text-align: center;
+    }
+
 }
 </style>
