@@ -1,6 +1,6 @@
 const CurrencyFormatter = {
   convertToBRL(value = null) {
-    if (!value && value !== 0) return "-";
+    if (!value) return "-";
 
     return new Intl.NumberFormat("pt-BR", {
       style: "currency",
