@@ -1,5 +1,5 @@
 # Vue Extract
-An SPA application to display a bank extract account. Made with Vue 3 with `vue-cli`
+A SPA application to display a bank extract account. Made with Vue 3 with `vue-cli`
 
 ## Prerequisites
 - Node.js 
