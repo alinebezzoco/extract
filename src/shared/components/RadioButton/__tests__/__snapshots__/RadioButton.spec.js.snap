@@ -10,12 +10,12 @@ VueWrapper {
     "_container": <div
       data-v-app=""
     >
-      
-      <input
-        type="radio"
-      />
-      <label />
-      
+      <span>
+        <input
+          type="radio"
+        />
+        <label />
+      </span>
     </div>,
     "_context": Object {
       "app": [Circular],
@@ -417,7 +417,7 @@ VueWrapper {
           "subTree": Object {
             "__v_isVNode": true,
             "__v_skip": true,
-            "anchor": ,
+            "anchor": null,
             "appContext": null,
             "children": Array [
               Object {
@@ -570,13 +570,18 @@ VueWrapper {
               },
             ],
             "dynamicProps": null,
-            "el": ,
+            "el": <span>
+              <input
+                type="radio"
+              />
+              <label />
+            </span>,
             "key": null,
-            "patchFlag": 64,
+            "patchFlag": 0,
             "props": null,
             "ref": null,
             "scopeId": null,
-            "shapeFlag": 16,
+            "shapeFlag": 17,
             "slotScopeIds": null,
             "ssContent": null,
             "ssFallback": null,
@@ -585,7 +590,7 @@ VueWrapper {
             "target": null,
             "targetAnchor": null,
             "transition": null,
-            "type": Symbol(Fragment),
+            "type": "span",
           },
           "suspense": null,
           "suspenseId": 0,
@@ -645,7 +650,12 @@ VueWrapper {
         "dirs": null,
         "dynamicChildren": null,
         "dynamicProps": null,
-        "el": ,
+        "el": <span>
+          <input
+            type="radio"
+          />
+          <label />
+        </span>,
         "key": null,
         "patchFlag": 0,
         "props": Object {
@@ -764,7 +774,12 @@ VueWrapper {
         "dirs": null,
         "dynamicChildren": null,
         "dynamicProps": null,
-        "el": ,
+        "el": <span>
+          <input
+            type="radio"
+          />
+          <label />
+        </span>,
         "key": null,
         "patchFlag": 0,
         "props": null,
@@ -819,6 +834,11 @@ VueWrapper {
   },
   "isDisabled": [Function],
   "rootVM": Object {},
-  "wrapperElement": ,
+  "wrapperElement": <span>
+    <input
+      type="radio"
+    />
+    <label />
+  </span>,
 }
 `;

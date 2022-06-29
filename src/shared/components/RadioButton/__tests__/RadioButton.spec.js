@@ -2,12 +2,12 @@ import { mount } from '@vue/test-utils';
 import { render, fireEvent, screen } from '@testing-library/vue';
 import RadioButton from "../RadioButton.vue";
 
-const PROPS = {
+const mockProps = {
   label: 'My Label'
 };
-const ATTRS = { id: 'id' };
-const ID_SELECTOR = '#id';
-const LABEL = 'label';
+const mockAttrs = { id: 'id' };
+const mockIdSelector = '#id';
+const mockLabel = 'label';
 
 describe('RadioButton.vue', () => {
   it('should render the component', () => {
@@ -19,13 +19,13 @@ describe('RadioButton.vue', () => {
 
   it('should change value of radio button by clicking label', async () => {
     const container = mount(RadioButton, {
-      propsData: PROPS,
-      attrs: ATTRS
+      propsData: mockProps,
+      attrs: mockAttrs
     });
-    const label = container.find(LABEL);
+    const label = container.find(mockLabel);
 
     await label.trigger('click');
-    const input = container.find(ID_SELECTOR);
+    const input = container.find(mockIdSelector);
 
     expect((input.element).checked).toBeTruthy();
   });

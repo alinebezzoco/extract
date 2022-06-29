@@ -3,7 +3,7 @@ import { render, cleanup } from "@testing-library/vue";
 import "@testing-library/jest-dom";
 import Search from "../Search.vue";
 
-const PROPS = {
+const mockProps = {
   label: "Busca:",
   name: "input-search",
   id: "input-search",
@@ -16,7 +16,7 @@ describe("Search.vue", () => {
   it("should have render with default classes", () => {
     const container = mount(Search, {
       propsData: { 
-        ...PROPS, 
+        ...mockProps, 
         value: "Luis Inácio"
       },
 
@@ -26,7 +26,7 @@ describe("Search.vue", () => {
 
   it("should have focus input", () => {
     const { getByTestId } = render(Search, {
-      propsData: PROPS,
+      propsData: mockProps,
     });
     getByTestId("search-filter").focus();
     expect(getByTestId("search-filter")).toHaveFocus();
@@ -35,7 +35,7 @@ describe("Search.vue", () => {
   it("should render empty value", () => {
     const container = mount(Search, {
       propsData: {
-        ...PROPS,
+        ...mockProps,
         value: "",
       },
     });
