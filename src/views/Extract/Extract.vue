@@ -21,7 +21,7 @@
       <TableBody v-else :filteredItems="filteredItems">
       </TableBody>
     </Table>
-    <div v-if="search && !filteredItems.length">
+    <div v-if="search && !filteredItems.length || !items.length">
       <p>Nenhum resultado encontrado</p>
     </div>
   </section>
@@ -30,6 +30,7 @@
 <script>
 import { ENTRY_TYPE, SOURCE_TYPE, TRANSACTION_TYPE, STATUS_TYPE } from '@/shared/constants/TransactionType.js';
 import { FILTER_TYPE } from '@/shared/constants/FilterType.js';
+import { getData } from '@/api/ExtractService';
 import Table from '@/shared/components/Table/Table.vue';
 import TableBody from '@/shared/components/Table/TableBody.vue';
 
@@ -48,7 +49,7 @@ export default {
     };
   },
   created() {
-    this.getUserExtractData();
+    this.fetchExtractData();
   },
   computed: {
     filteredItems() {
@@ -75,21 +76,19 @@ export default {
     },
   },
   methods: {
-    async getUserExtractData() {
-      const headers = { "Content-Type": "application/json" };
-      await fetch("https://bank-extract-default-rtdb.firebaseio.com/.json", { headers })
-        .then(response => response.json())
-        .then(data => {
-          this.items = data.results;
-          this.items.map(el => {
-            el.items.forEach(result => {
-              this.details.push(result);
-              this.renderTransactionStatus();
-            });
+    async fetchExtractData() {
+      try {
+        const { data } = await getData();
+        this.items = data.results;
+        this.items.map(el => {
+          el.items.forEach(result => {
+            this.details.push(result);
+            this.renderTransactionStatus();
           });
-        }).catch(error => {
-          console.error("An error occurred. Try again", error);
         });
+      } catch (error) {
+        console.error('Failed to fetch extract data ', error);
+      }
     },
     // Render transaction status according status, entry and souce type
     renderTransactionStatus() {
