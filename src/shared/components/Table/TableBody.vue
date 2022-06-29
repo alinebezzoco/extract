@@ -3,6 +3,7 @@
         <slot v-for="(result, index) in items" :key="index">
             <div class="table-header">
                 <p>{{ $dateFormat.formatDateDM(result.date) }}</p>
+                <span class="vertical-line"></span>
             </div>
             <div class="table-content">
                 <div v-for="(item, i) in result.items" :key="i" class="table-results">
@@ -18,7 +19,7 @@
             </div>
         </slot>
 
-        <div class="table-content">
+        <div class="table-content" v-if="filteredItems">
             <div v-for="(item, index) in filteredItems" :key="index" class="table-results">
                 <img :src="require(`@/assets/icons/${item.type}.svg`)" :alt="item.status" :title="item.status">
                 <p>{{ item.actor }}</p>
@@ -42,21 +43,40 @@ export default {
 
 <style lang="scss" scoped>
 .table-body {
+    .vertical-line {
+        height: 20px;
+        top: 30px;
+        left: 33px;
+        width: 1px;
+        background: var(--gray-300);
+        position: absolute;
+    }
+
     .table-header {
         display: flex;
         font-weight: 900;
         font-size: 12px;
-        line-height: 20px;
+        line-height: 35px;
         padding-left: 20px;
         color: var(--gray-500);
+        position: relative;
+        height: 50px;
+
+        p {
+            margin: 0;
+        }
 
         @media(max-width: 780px) {
             padding-left: 0;
         }
 
         &:first-child {
-            position: relative;
-            top: -45px;
+            top: -5px;
+        }
+
+
+        &:last-child {
+            width: 0;
         }
     }
 }
@@ -108,14 +128,38 @@ export default {
                 height: 24px;
             }
         }
+
+
+    }
+
+    &:last-child {
+        margin-top: 60px;
     }
 }
 
 .table-footer {
     font-weight: 400;
     font-size: 12px;
-    line-height: 20px;
     display: flex;
     justify-content: flex-end;
+    position: relative;
+    height: 30px;
+
+    p {
+        padding: 30px 20px;
+    }
+
+    .vertical-line {
+        height: 20px;
+        top: 248px;
+        left: 33px;
+        width: 1px;
+        background: var(--gray-300);
+        position: absolute;
+
+        &:last-child {
+            width: 0;
+        }
+    }
 }
 </style>

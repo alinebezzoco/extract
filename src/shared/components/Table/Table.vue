@@ -20,6 +20,7 @@ export default {
 .table-header {
     display: flex;
     justify-content: flex-start;
+    height: 0;
 
     p {
         display: inline-block;
