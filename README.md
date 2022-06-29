@@ -1,4 +1,4 @@
-# Vue Bank Extract
+# Vue Extract
 An SPA application to display a bank extract account. Made with Vue 3 with `vue-cli`
 
 ## Prerequisites
@@ -24,7 +24,6 @@ An SPA application to display a bank extract account. Made with Vue 3 with `vue-
 │   ├── api
 │   ├── assets
 │   │   ├── icons
-│   │   ├── images
 │   ├── shared
 │   │   ├── components
 │   |   |   |── ComponentName
@@ -40,9 +39,10 @@ An SPA application to display a bank extract account. Made with Vue 3 with `vue-
 
 - api: mock REST api
 - assets: image and icon project
-- shared: a folder that stores components, constants and utils
+- shared: a folder that stores components, token, constants and utils
     - components: a folder that stores elements, for example: search filter, table, radio button
     - constants: a folder that stores key/value objects
+    - tokens: a folder that stores token colors and css values, for example: spacing, typography
     - utils: a folder that stores util and global functions
 - views: a folder that stores all page files
 
