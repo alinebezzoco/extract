@@ -28,7 +28,7 @@ export default {
         font-size: 14px;
         text-align: left;
         padding: 0 60px;
-        width: 150px;
+        width: 160px;
         color: var(--gray-400);
 
         &:nth-of-type(3) {
