@@ -1,6 +1,6 @@
 .radio-group {
-  width: 100%;
   list-style-type: none;
+  display: flex;
   padding: 0;
   @media (max-width: 780px) {
     margin-bottom: 20px;
