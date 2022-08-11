@@ -122,7 +122,7 @@ export default {
 .content {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
 
   @media (max-width: 780px) {
