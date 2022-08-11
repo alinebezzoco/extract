@@ -17,10 +17,6 @@
         background-size: 24px 24px;
         background-repeat: no-repeat;
         background-position: 16px 20px;
-        @media(max-width: 780px) { 
-            width: 70%;
-            display: block;
-        }
         &:placeholder { 
             padding-left: 20px;
         }
