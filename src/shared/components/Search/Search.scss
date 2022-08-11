@@ -1,12 +1,16 @@
 .search { 
     width: 100%;
+    display: flex;
+    @media(max-width: 780px) { 
+        display: block;
+    }
     input { 
         height: 64px;
         background: var(--gray-100);
         border-radius: 16px;
         text-align: left;
         font-size: 16px;
-        width: 85%;
+        width: 100%;
         padding: 0 50px;
         border: none;
         background-image: url("@/assets/icons/search.svg");
@@ -15,6 +19,7 @@
         background-position: 16px 20px;
         @media(max-width: 780px) { 
             width: 70%;
+            display: block;
         }
         &:placeholder { 
             padding-left: 20px;
