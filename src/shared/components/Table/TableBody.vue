@@ -145,10 +145,6 @@ export default {
     position: relative;
     height: 30px;
 
-    p {
-        padding: 30px 20px;
-    }
-
     .vertical-line {
         height: 20px;
         top: 248px;
